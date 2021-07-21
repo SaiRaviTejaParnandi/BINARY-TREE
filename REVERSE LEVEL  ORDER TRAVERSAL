@@ -1,0 +1,15 @@
+
+    vector<int> ans;
+    queue<Node*> q;
+    Node*t;
+    q.push(root);
+    while(!q.empty())
+    {
+        t=q.front();
+        ans.push_back(t->data);
+        if(t->right) q.push(t->right);
+        if(t->left) q.push(t->left);
+        q.pop();
+    }
+    reverse(ans.begin(),ans.end());
+    return ans;
